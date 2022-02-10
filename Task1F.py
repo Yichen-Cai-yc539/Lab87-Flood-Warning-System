@@ -9,12 +9,13 @@ def run1f():
     # Initialize
     stations = build_station_list()
     inconsistent_list = inconsistent_typical_range_stations(stations)
-    
-    # Build and sort list of names
+    print(inconsistent_list)
+
+
     name_list = []
-    for item in inconsistent_list:
-        name = item[0]
-        name_list.append(name)
+    for station in stations:
+        if station.typical_range_consistent() == False:
+            name_list.append(station.name)
     name_list = sorted(name_list)
 
     print(name_list)
