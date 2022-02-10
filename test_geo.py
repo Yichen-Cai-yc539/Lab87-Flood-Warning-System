@@ -2,7 +2,7 @@
 
 """Unit test for geo module"""
 
-from floodsystem.geo import stations_by_distance, stations_within_radius
+from floodsystem.geo import rivers_with_station, stations_by_distance, stations_within_radius
 from floodsystem.stationdata import build_station_list
 
 def test_stations_by_distance():
@@ -40,3 +40,6 @@ def test_stations_within_radius():
     for item in within_r:
         assert item[1] <= r
 
+def test_rivers_with_station(station):
+    stations = build_station_list()
+    assert len(rivers_with_station(stations)) > 0 

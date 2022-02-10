@@ -68,3 +68,33 @@ def stations_within_radius(stations, centre, r):
             filtered_list.append(item)
 
     return filtered_list
+
+def rivers_with_station(stations):
+    rivers = []
+    for station in stations:
+        if not station.river in rivers:
+            rivers.append(station.river)
+    return rivers
+
+
+
+def stations_by_river(stations):
+    rivers_stations_of_dict = {}
+    for rivers in rivers_with_station(stations):
+        rivers_stations_of_dict[river] = sorted([station.name for station in stations if stations.river == river])
+    return rivers_stations_of_dict
+    print('hffh')
+
+def rivers_by_station_number(stations, N):
+    rivers = rivers_with_station(stations)
+    river_counted = []
+    for river in rivers:
+        count = 0
+        for station in stations:
+            if station.river == river:
+                count += 1
+        river_counted.append((river,count))
+    river_counted = sorted_by_key(river_counted, 1, reverse=True)
+    while river_counted[N-1][1] == river_counted[N][1]:
+        N += 1
+    return river_counted[:N]
