@@ -42,7 +42,7 @@ def test_stations_within_radius():
 
 def test_rivers_with_station(stations):
     stations = build_station_list()
-    assert len(rivers_with_station(stations)) > 0 
+    assert len(rivers_with_station(stations)) != 0
 
 
 def test_rivers_by_station_number():
