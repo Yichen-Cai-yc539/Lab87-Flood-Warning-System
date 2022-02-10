@@ -9,7 +9,7 @@ geographical data.
 from inspect import CORO_CLOSED
 from unicodedata import name
 
-from sklearn import utils
+# from sklearn import utils
 from .utils import sorted_by_key  # noqa
 from haversine import haversine
 
