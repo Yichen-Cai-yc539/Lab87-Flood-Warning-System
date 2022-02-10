@@ -81,7 +81,7 @@ def rivers_with_station(stations):
 def stations_by_river(stations):
     rivers_stations_of_dict = {}
     for rivers in rivers_with_station(stations):
-        rivers_stations_of_dict[rivers] = sorted([station.name for station in stations if stations.river == rivers])
+        rivers_stations_of_dict[rivers] = sorted([station.name for station in stations if stations.rivers == rivers])
     return rivers_stations_of_dict
     print('hffh')
 
