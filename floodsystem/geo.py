@@ -22,7 +22,7 @@ def rivers_with_station(stations):
 def stations_by_river(stations):
     rivers_stations_of_dict = {}
     for rivers in rivers_with_station(stations):
-        rivers_stations_of_dict[river] = sorted([station.name for station in stations if stations.river == river])
+        rivers_stations_of_dict[rivers] = sorted([station.name for station in stations if stations.river == rivers])
     return rivers_stations_of_dict
 
 def stations_by_distance(stations, p):
@@ -81,7 +81,7 @@ def rivers_with_station(stations):
 def stations_by_river(stations):
     rivers_stations_of_dict = {}
     for rivers in rivers_with_station(stations):
-        rivers_stations_of_dict[river] = sorted([station.name for station in stations if stations.river == river])
+        rivers_stations_of_dict[rivers] = sorted([station.name for station in stations if stations.river == rivers])
     return rivers_stations_of_dict
     print('hffh')
 
