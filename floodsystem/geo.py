@@ -10,7 +10,7 @@ from unicodedata import name
 
 # from sklearn import utils
 from .utils import sorted_by_key  # noqa
-<<<<<<< HEAD
+from haversine import haversine
 
 def rivers_with_station(stations):
     rivers = []
@@ -19,15 +19,11 @@ def rivers_with_station(stations):
             rivers.append(station.river)
     return rivers
 
-
-
 def stations_by_river(stations):
     rivers_stations_of_dict = {}
     for rivers in rivers_with_station(stations):
         rivers_stations_of_dict[river] = sorted([station.name for station in stations if stations.river == river])
     return rivers_stations_of_dict
-=======
-from haversine import haversine
 
 def stations_by_distance(stations, p):
     """This function calculates sorted distances between each 
@@ -71,5 +67,4 @@ def stations_within_radius(stations, centre, r):
         if item[1] <= r:
             filtered_list.append(item)
 
-    return filtered_list 
->>>>>>> 0aafb492f1882642e6df7d05c86695118f040563
+    return filtered_list
