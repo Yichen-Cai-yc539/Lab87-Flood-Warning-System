@@ -88,13 +88,16 @@ def stations_by_river(stations):
 def rivers_by_station_number(stations, N):
     rivers = rivers_with_station(stations)
     river_counted = []
-    for river in rivers:
-        count = 0
-        for station in stations:
-            if station.river == river:
-                count += 1
-        river_counted.append((river,count))
-    river_counted = sorted_by_key(river_counted, 1, reverse=True)
-    while river_counted[N-1][1] == river_counted[N][1]:
-        N += 1
-    return river_counted[:N]
+    if N == 0:
+        return None
+    else:
+        for river in rivers:
+            count = 0
+            for station in stations:
+                if station.river == river:
+                    count += 1
+            river_counted.append((river,count))
+        river_counted = sorted_by_key(river_counted, 1, reverse=True)
+        while river_counted[N-1][1] == river_counted[N][1]:
+            N += 1
+        return river_counted[:N]

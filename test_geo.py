@@ -40,6 +40,11 @@ def test_stations_within_radius():
     for item in within_r:
         assert item[1] <= r
 
-def test_rivers_with_station(station):
+def test_rivers_with_station(stations):
     stations = build_station_list()
     assert len(rivers_with_station(stations)) > 0 
+
+
+def test_rivers_by_station_number():
+    stations = build_station_list()
+    rivers_by_station_number(stations, 1)
