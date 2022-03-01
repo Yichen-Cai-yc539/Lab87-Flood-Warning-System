@@ -61,10 +61,10 @@ class MonitoringStation:
         if self.latest_level == None:
             return None
         else:
-            low = self.typical_range[0]
-            high = self.typical_range[1]
+            low = min(self.typical_range)
+            high = max(self.typical_range)
             typ_range = high - low
-            fraction = self.latest_level / typ_range
+            fraction = (self.latest_level - low) / typ_range
             return fraction
 
 def inconsistent_typical_range_stations(stations):

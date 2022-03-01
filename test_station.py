@@ -32,3 +32,6 @@ def test_inconsistent_typical_range_stations():
     stations = build_station_list()
     typ_list = inconsistent_typical_range_stations(stations)
     assert typ_list is not None
+
+def test_relative_water_level():
+    pass
