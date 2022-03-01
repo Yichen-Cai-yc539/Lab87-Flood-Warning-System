@@ -41,8 +41,3 @@ def test_stations_within_radius():
         assert item[1] <= r
 
 
-
-def test_rivers_by_station_number():
-    stations = build_station_list()
-    a = rivers_by_station_number(stations, 1)
-    assert len(a) > 0
