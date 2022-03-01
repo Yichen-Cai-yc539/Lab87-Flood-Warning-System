@@ -69,7 +69,7 @@ def stations_within_radius(stations, centre, r):
 
     return filtered_list
 
-def rivers_with_station(stations):
+##ef rivers_with_station(stations):
     rivers = []
     for station in stations:
         if not stations.river in rivers:
