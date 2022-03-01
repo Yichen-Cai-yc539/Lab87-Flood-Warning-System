@@ -72,8 +72,8 @@ def stations_within_radius(stations, centre, r):
 def rivers_with_station(stations):
     rivers = []
     for station in stations:
-        if not station.river in rivers:
-            rivers.append(station.river)
+        if not stations.river in rivers:
+            rivers.append(stations.river)
     return rivers
 
 
