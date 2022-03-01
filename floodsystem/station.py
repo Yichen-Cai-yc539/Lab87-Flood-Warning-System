@@ -58,6 +58,8 @@ class MonitoringStation:
         """Returns latest water level as a fraction of typical range"""
         if self.typical_range_consistent() == False:
             return None
+        if self.latest_level == None:
+            return None
         else:
             low = self.typical_range[0]
             high = self.typical_range[1]
