@@ -1,6 +1,7 @@
-import floodsystem.analysis 
-import floodsystem
+from floodsystem.analysis import *
+
 
 def test_call():
-    pass
-
+    station = build_station_list()
+    a = relative_risk(station)
+    
