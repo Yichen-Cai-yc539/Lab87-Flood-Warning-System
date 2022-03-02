@@ -35,19 +35,25 @@ def plot_water_levels(station, dates, levels):
     with typical low and high levels included
     label axes
     station name as plot title"""
+    
+    if len(levels) > 0:
+        # Plot
+        plt.plot(dates, levels)
+        plt.axhline(y=station.typical_range[0], color='r')
+        plt.axhline(y=station.typical_range[1], color='g')
 
-    # Plot
-    plt.plot(dates, levels)
-    plt.axhline(y=station.typical_range[0], color='r')
-    plt.axhline(y=station.typical_range[1], color='g')
+        # Add axis labels, rotate date labels and add plot title
+        plt.xlabel('date')
+        plt.ylabel('water level (m)')
+        plt.xticks(rotation=45)
+        plt.title("{}".format(station.name))
 
-    # Add axis labels, rotate date labels and add plot title
-    plt.xlabel('date')
-    plt.ylabel('water level (m)')
-    plt.xticks(rotation=45)
-    plt.title("{}".format(station.name))
+        # Display plot
+        plt.tight_layout()
 
-    # Display plot
-    plt.tight_layout()
-
-    plt.show()
+        plt.show()
+        
+        return True
+        
+    else:
+        return False
