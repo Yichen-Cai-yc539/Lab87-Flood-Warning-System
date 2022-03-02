@@ -1,19 +1,5 @@
-"""
-Test method stations_level_over_threshold
-
-- check every relative water level is indeed
-larger than tol
-
-- check all output is not None
-
-"""
-
-
-from unittest.mock import Mock
-
-from sqlalchemy import over
 from floodsystem.flood import stations_highest_rel_level, stations_level_over_threshold
-from floodsystem.stationdata import build_station_list, update_water_levels
+
 
 class MockStation():
     """Madeup station data for testing"""
@@ -34,7 +20,6 @@ class MockStation():
         return fraction
         
 
-
 def test_stations_level_over_threshold():
     
     # Initialize
@@ -48,6 +33,7 @@ def test_stations_level_over_threshold():
     
     assert over_tol_list is not None
     assert len(over_tol_list) == 2
+
 
 def test_stations_highest_rel_level():
 
